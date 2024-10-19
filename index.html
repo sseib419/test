@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Chart Selector</title>
+  <script>
+    // JavaScript function to change the chart images based on dropdown selection
+    function optionChanged(value) {
+      const barchartImage = document.getElementById('barchartImage');
+      const boxwhiskerImage = document.getElementById('boxwhiskerImage');
+      const maxminavgImage = document.getElementById('maxminavgImage');
+      const dailymaxtempImage = document.getElementById('dailymaxtempImage');
+      // Update the chart images based on the selected month
+      barchartImage.src = '/static/' + value + 'barchart.png';
+      boxwhiskerImage.src = '/static/' + value + 'boxwhisker.png';
+      maxminavgImage.src = '/static/' + value + 'maxminavgline.png';
+      dailymaxtempImage.src = '/static/' + value + 'dailymaxtemp.png';
+    }
+  </script>
+</head>
+<body>
+  <div class="card card-body bg-light">
+    <h6>Select the Month:</h6>
+    <select id="selDataset" onchange="optionChanged(this.value)">
+      <option value="January">January</option>
+      <option value="February">February</option>
+      <option value="March">March</option>
+      <option value="April">April</option>
+      <option value="May">May</option>
+      <option value="June">June</option>
+      <option value="July">July</option>
+      <option value="August">August</option>
+      <option value="September">September</option>
+      <option value="October">October</option>
+      <option value="November">November</option>
+      <option value="December">December</option>
+    </select>
+  </div>
+  <div>
+    <h3>Bar Chart</h3>
+    <img id="barchartImage" src='/static/Januarybarchart.png' alt="Bar Chart" style="width: 600px; height: 400px;">
+  </div>
+  <div>
+    <h3>Box and Whisker Chart</h3>
+    <img id="boxwhiskerImage" src="/static/Januaryboxwhisker.png" alt="Box and Whisker Chart" style="width: 600px; height: 400px;">
+  </div>
+  <div>
+    <h3>Daily Max Dry Bulb Temperature Chart</h3>
+    <img id="dailymaxtempImage" src="/static/Januarydailymaxtemp.png" alt="Daily Max Dry Bulb Temp Chart" style="width: 600px; height: 400px;">
+  </div>
+  <div>
+    <h3>Max, Min, & Avg Dry Bulb Temperature Chart</h3>
+    <img id="maxminavgImage" src="/static/Januarymaxminavgline.png" alt="Max, Min, & Avg Dry Bulb Temp Chart" style="width: 600px; height: 400px;">
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
